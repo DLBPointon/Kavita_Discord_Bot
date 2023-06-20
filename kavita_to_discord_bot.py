@@ -65,9 +65,9 @@ def send_to_discord(data, disc_hook):
 
 def main():
     kav_base, kav_port, kav_api, kav_jwt, disc_hook = dotloader()
-    print(kav_base, kav_port, kav_api, kav_jwt, disc_hook)
     kav_headers = {"Authorization": f"Bearer {kav_jwt}"}
 
+# flag for recomended or updated?
     data = get_recommended_kavita_data(kav_base, kav_port, kav_headers)
     data2 = get_recently_updated_kavita_data(kav_base, kav_port, kav_api, kav_headers)
     list = get_titles(data2)
